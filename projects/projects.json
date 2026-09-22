@@ -1,0 +1,122 @@
+[
+  {
+    "name": "MCAET College Website — Official & Live 🌐",
+    "desc": "Built and deployed the official website of Mahamaya College of Agricultural Engineering & Technology (MCAET) — a government B.Tech, M.Tech & Ph.D engineering college under ANDUAT, Ayodhya, UP. The site is actively used by the college for all official communication. Features: responsive multi-page Next.js architecture, department pages (7 departments), faculty & administration directory, admissions info, placement section, media & events gallery, real-time notice board with scrolling ticker, academic calendar integration, government site carousel, YouTube college tour embed, weather & date widget, and an AI-powered Chatbot (🤖) integrated with Google Gemini API for answering student queries about courses, admissions, departments & campus — fully live and serving students, faculty, and the institution 24/7.",
+    "image": "mcaetlms",
+    "category": "web",
+    "links": {
+      "view": "https://mcaet.vercel.app/",
+      "code": "https://github.com/DineshYadav06"
+    }
+  },
+  {
+    "name": "MCAET ExamHub — Online Exam Portal 🎓 LIVE",
+    "desc": "Designed and developed the official Online Examination & Academic Evaluation Portal for MCAET — currently live and actively used by B.Tech, M.Tech, and Ph.D students for their online quizzes, mid-term, and end-term exams. Built with Next.js (React), Tailwind CSS, and secure backend. Features: separate secure logins for Students, Professors, and Administrative Officers; timed Computer-Based Tests (CBT) with question navigation; auto-scoring & instant results; professor dashboard for exam creation and question management; official Notice Board with live updates; 8 academic department pages (AE, CSE, FMPE, PEE, SWCE, IDE, REE, BEAS); FAQ, helpdesk & privacy policy pages; dark/light mode; AICTE & ICAR approved institution branding; IST timezone-enforced exam scheduling; and IT Act 2000 compliance security. Deployed on Vercel — HTTPS secured, SEO optimised, Google verified.",
+    "image": "examhub",
+    "category": "web",
+    "links": {
+      "view": "https://mcaetexamportal.vercel.app/",
+      "code": "https://github.com/DineshYadav06"
+    }
+  },
+  {
+    "name": "BhoomiDrishti",
+    "desc": "Smarter land acquisition for a stronger India — an AI-assisted platform to analyze, track, and support transparent land acquisition workflows with geospatial intelligence.",
+    "image": "bhoomidrishti",
+    "category": "ai",
+    "links": {
+      "view": "https://github.com/DineshYadav06",
+      "code": "https://github.com/DineshYadav06"
+    }
+  },
+  {
+    "name": "Task Management",
+    "desc": "Public task management website for creating, organizing, and tracking work with a clean, responsive interface.",
+    "image": "taskmanagement",
+    "category": "web",
+    "links": {
+      "view": "https://taskmaster-tm.vercel.app",
+      "code": "https://github.com/DineshYadav06/Task-Management"
+    }
+  },
+  {
+    "name": "GlowMart India",
+    "desc": "Responsive cosmetic product selling platform (GlowMart) with browse, search, cart, authentication, admin features, and an ML-based product recommendation engine served via FastAPI.",
+    "image": "glowmart",
+    "category": "web",
+    "links": {
+      "view": "https://github.com/DineshYadav06",
+      "code": "https://github.com/DineshYadav06"
+    }
+  },
+  {
+    "name": "Meibomian Gland Segmentation",
+    "desc": "U-Net deep learning model for automated Meibomian gland segmentation from infrared meibography images, supporting MGD diagnosis. Preprocessing with CLAHE, augmentation, and Dice/IoU evaluation.",
+    "image": "meibomian",
+    "category": "ai",
+    "links": {
+      "view": "https://github.com/DineshYadav06/Meibomian-glands-gmentation.",
+      "code": "https://github.com/DineshYadav06/Meibomian-glands-gmentation."
+    }
+  },
+  {
+    "name": "Indian Cattle & Buffalo Breed AI",
+    "desc": "Deep learning image recognition system to identify Indian cattle and buffalo breeds for farmers, researchers, and livestock management. Transfer learning CNN with ~80% evaluation accuracy.",
+    "image": "cattle",
+    "category": "ai",
+    "links": {
+      "view": "https://github.com/DineshYadav06/AI-based-system-for-recognizing-Indian-cattle-and-buffalo-breeds-",
+      "code": "https://github.com/DineshYadav06/AI-based-system-for-recognizing-Indian-cattle-and-buffalo-breeds-"
+    }
+  },
+  {
+    "name": "RYDVORA Bike Marketplace",
+    "desc": "AI-powered multi-vendor bike marketplace built with FastAPI, Next.js, MongoDB, Firebase, and machine learning recommendation systems.",
+    "image": "rydvora",
+    "category": "web",
+    "links": {
+      "view": "https://github.com/DineshYadav06",
+      "code": "https://github.com/DineshYadav06"
+    }
+  },
+  {
+    "name": "Face Emotion Detection",
+    "desc": "CNN trained on 4,500+ grayscale images to classify six facial emotions in real time with OpenCV. Achieved 89% accuracy and 0.87 weighted F1-score; inference improved by 35%.",
+    "image": "emotion",
+    "category": "ai",
+    "links": {
+      "view": "https://github.com/DineshYadav06/Face_Emotion_Detection",
+      "code": "https://github.com/DineshYadav06/Face_Emotion_Detection"
+    }
+  },
+  {
+    "name": "KrishiNova X",
+    "desc": "AI-powered smart agriculture platform for crop management, plant disease detection, and decision support for farmers, researchers, and agricultural organizations.",
+    "image": "krishinova",
+    "category": "ai",
+    "links": {
+      "view": "https://github.com/DineshYadav06",
+      "code": "https://github.com/DineshYadav06"
+    }
+  },
+  {
+    "name": "MCAET College Chatbot (AI)",
+    "desc": "Generative AI conversational assistant for MCAET using RAG over institutional documents — courses, admissions, departments, and campus information — integrated live on the college website and served through a Python/Gemini API.",
+    "image": "chatbot",
+    "category": "ai",
+    "links": {
+      "view": "https://mcaet.vercel.app/",
+      "code": "https://github.com/DineshYadav06"
+    }
+  },
+  {
+    "name": "Exam Portal AI Assistant",
+    "desc": "NLP chatbot for the university examination control portal. Converts natural-language questions into structured lookups for exam schedules, results, and forms.",
+    "image": "examai",
+    "category": "ai",
+    "links": {
+      "view": "https://mcaetexamportal.vercel.app/",
+      "code": "https://github.com/DineshYadav06"
+    }
+  }
+]

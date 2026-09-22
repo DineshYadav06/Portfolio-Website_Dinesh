@@ -1,0 +1,25 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /skills/{id} {
+      allow read: if true;
+      allow write: if false;
+    }
+    match /projects/{id} {
+      allow read: if true;
+      allow write: if false;
+    }
+    match /experience/{id} {
+      allow read: if true;
+      allow write: if false;
+    }
+    match /contacts/{id} {
+      allow read: if false;
+      allow create: if request.resource.data.keys().hasAll(['name', 'email', 'message'])
+                    && request.resource.data.name.size() > 1
+                    && request.resource.data.message.size() > 3
+                    && request.resource.data.message.size() < 4000;
+      allow update, delete: if false;
+    }
+  }
+}

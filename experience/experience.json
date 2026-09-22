@@ -1,0 +1,79 @@
+[
+  {
+    "org": "Smart India Hackathon (SIH) 2026",
+    "role": "🏆 Team Lead — Internal Hackathon Qualifier (Winner)",
+    "place": "MCAET, ANDUAT",
+    "dates": "14 Sep 2026",
+    "detail": "Led the college team in the SIH 2026 Internal Hackathon round at MCAET. As Team Lead, managed team coordination, problem statement selection, ideation, prototype development, and final presentation. Successfully cleared the internal round — qualifying the team to represent the college at the national level."
+  },
+  {
+    "org": "Smart India Hackathon (SIH) 2025",
+    "role": "🏆 Team Lead — Internal Hackathon Qualifier (Winner)",
+    "place": "MCAET, ANDUAT",
+    "dates": "18 Sep 2025",
+    "detail": "Led the college team in the SIH 2025 Internal Hackathon round at MCAET. As Team Lead, drove the complete solution from concept to demo — problem analysis, technology stack selection, development, and pitching. Cleared the internal qualifier, earning the team a spot to advance further in the national competition."
+  },
+  {
+    "org": "SICSR — Symbiosis International University, Pune",
+    "role": "AI, Machine Learning & Deep Learning Intern",
+    "place": "Pune, India (Remote)",
+    "dates": "July 2026 – Present",
+    "detail": "Working remotely on Artificial Intelligence, Machine Learning, and Deep Learning for real-world applications. Performing data preprocessing, data augmentation, model training, hyperparameter tuning, and performance evaluation. Collaborating with mentors on research-driven AI projects — including medical image segmentation (U-Net) and Quantum Machine Learning using Qiskit / PennyLane — and documenting technical outcomes."
+  },
+  {
+    "org": "Independent",
+    "role": "Freelance Developer — AI & Backend Systems",
+    "place": "India",
+    "dates": "December 2024 – Present",
+    "detail": "Production FastAPI services for ML features, JWT auth, async APIs, and query/index optimization (~30% faster average response time). Built official college website (mcaet.vercel.app) and live exam portal (mcaetexamportal.vercel.app) with AI integrations."
+  },
+  {
+    "org": "GitLab — iHack",
+    "role": "📜 Certification — iHack (2025-26)",
+    "place": "",
+    "dates": "2025–26",
+    "detail": "Earned GitLab iHack certification covering DevOps, CI/CD pipelines, version control, and collaborative software development practices."
+  },
+  {
+    "org": "Deloitte Australia",
+    "role": "📜 Data Analytics Job Simulation",
+    "place": "",
+    "dates": "Completed",
+    "detail": "Completed Deloitte Australia's Data Analytics virtual job simulation — hands-on experience with data interpretation, forensic analytics, dashboarding, and business insights reporting."
+  },
+  {
+    "org": "Tata Group",
+    "role": "📜 Cybersecurity Analyst Job Simulation",
+    "place": "",
+    "dates": "Completed",
+    "detail": "Completed Tata Group's Cybersecurity Analyst virtual job simulation — covered threat identification, security risk assessment, identity access management, and incident response workflows."
+  },
+  {
+    "org": "Bitwars 3.0",
+    "role": "📜 Certificate of Participation — South India's Premier Offline Coding Event",
+    "place": "South India",
+    "dates": "2025–26",
+    "detail": "Participated in Bitwars 3.0 — South India's premier offline competitive coding event. Competed in algorithmic problem-solving challenges under time constraints."
+  },
+  {
+    "org": "AlgoUtsav 2026",
+    "role": "📜 Certificate of Participation — Preliminary Round",
+    "place": "",
+    "dates": "2026",
+    "detail": "Participated in the Preliminary Round of AlgoUtsav 2026 competitive programming contest — solving data structures and algorithms problems under timed conditions."
+  },
+  {
+    "org": "SkillManthan Technologies",
+    "role": "AI Predict (Python) Workshop",
+    "place": "MCAET, Ambedkar Nagar",
+    "dates": "February 2026",
+    "detail": "Hands-on workshop on Python and predictive AI concepts — data preprocessing, model building, and evaluation techniques."
+  },
+  {
+    "org": "Simplilearn",
+    "role": "📜 Python for Data Science — Certification",
+    "place": "",
+    "dates": "Completed",
+    "detail": "Certification covering Python for data science workflows — NumPy, Pandas, data visualization, statistical analysis, and ML fundamentals."
+  }
+]

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seed Firebase | Dinesh Portfolio</title>
+  <style>
+    body { font-family: Segoe UI, sans-serif; max-width: 720px; margin: 40px auto; padding: 0 16px; }
+    button { padding: 12px 18px; font-size: 16px; cursor: pointer; }
+    pre { background: #0f172a; color: #e2e8f0; padding: 16px; overflow: auto; }
+  </style>
+</head>
+<body data-base="./">
+  <h1>Upload portfolio data to Firestore</h1>
+  <p>1. Paste Firebase config in <code>assets/js/firebase-config.js</code></p>
+  <p>2. In Firestore rules, temporarily allow writes on skills, projects, and experience, or use the Firebase console.</p>
+  <p>3. Click the button. First-load of the homepage also seeds empty collections if writes are allowed.</p>
+  <button id="seed">Seed skills, projects, experience</button>
+  <pre id="log">Ready.</pre>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+  <script src="./assets/js/firebase-config.js"></script>
+  <script src="./assets/js/firebase-init.js"></script>
+  <script src="./assets/js/firebase-service.js"></script>
+  <script>
+    document.getElementById("seed").onclick = async function () {
+      const log = document.getElementById("log");
+      try {
+        if (!window.isFirebaseEnabled()) {
+          log.textContent = "Add your Firebase config first.";
+          return;
+        }
+        await window.PortfolioAPI.seedIfEmpty();
+        const [s, p, e] = await Promise.all([
+          window.PortfolioAPI.load("skills"),
+          window.PortfolioAPI.load("projects"),
+          window.PortfolioAPI.load("experience")
+        ]);
+        log.textContent = "Done.\nSkills: " + s.length + "\nProjects: " + p.length + "\nExperience: " + e.length;
+      } catch (err) {
+        log.textContent = String(err);
+      }
+    };
+  </script>
+</body>
+</html>
