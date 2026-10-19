@@ -22,8 +22,68 @@
     <meta name="twitter:description" content="Official portfolio of Dinesh Kumar Yadav — Data Science, Machine Learning, and AI Engineer. Research intern at Symbiosis International University." />
     <meta name="twitter:image" content="https://dinesh-kumar-yadav-d-code.vercel.app/assets/images/hero.webp" />
 
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Google Fonts Optimized Preconnect & Display Swap -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    </noscript>
+
+    <!-- Critical Inlined CSS for Instant First Contentful Paint -->
+    <style>
+      *{margin:0;padding:0;box-sizing:border-box;text-decoration:none;outline:none;border:none;transition:all .2s linear}
+      html{font-size:62.5%;overflow-x:hidden;scroll-behavior:smooth}
+      body{background:#f7f7f7;font-family:"Poppins",sans-serif;color:#0e2431}
+      header{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:1.7rem 10%;height:6.5rem;background-color:#fff;box-shadow:0 1px 4px rgba(146,161,176,.3)}
+      header .logo{font-size:1.9rem;font-weight:800;color:#0e2431}
+      header .logo:hover{color:#fc8c05}
+      header .navbar ul{list-style:none;display:flex;justify-content:center;align-items:center}
+      header .navbar li{margin-left:2.5rem}
+      header .navbar ul li a{font-size:1.57rem;color:#0e2431;font-weight:600}
+      header .navbar ul li a.active,header .navbar ul li a:hover{color:#011aff;border-bottom:.2rem solid #011aff;padding:.5rem 0}
+      #menu{font-size:3rem;cursor:pointer;color:rgb(24,2,63);display:none}
+      @media (max-width:768px){
+        #menu{display:block}
+        header .navbar{position:fixed;top:6.5rem;right:-120%;width:75%;height:100%;text-align:left;background-color:#0e0f31;flex-flow:column}
+        header .navbar ul{flex-flow:column;padding:1rem}
+        header .navbar ul li{width:26rem;margin:1rem 0}
+        header .navbar ul li a{color:#fff;font-size:2rem}
+        header .navbar.nav-toggle{right:0}
+      }
+      section{min-height:100vh;padding:2rem 9%}
+      .home{position:relative;display:flex;flex-wrap:wrap;gap:1.5rem;min-height:100vh;align-items:center}
+      .home #particles-js{position:absolute;top:0;left:0;height:100%;width:100%}
+      .home .content{flex:1 1 40rem;padding-top:1rem;z-index:1}
+      .home .image{flex:1 1 40rem;z-index:1;text-align:center}
+      .home .image img{width:70%;margin-left:6rem;border-radius:50%;box-shadow:0 2px 8px rgba(0,0,0,.3)}
+      .home .content h1{font-size:5rem;font-weight:800;color:#002057;line-height:1.2}
+      .home .content h1 span{color:#ff7b00}
+      .home .content p{font-size:2.5rem;color:#000;font-weight:600;padding:1rem 0}
+      .home .content p span{color:rgb(148,8,8)}
+      .home .btn{margin-top:1rem;position:absolute;line-height:0;padding:1.6rem 3rem;border-radius:4em;color:#fff;background:#2506ad;box-shadow:0 5px 18px rgba(48,68,247,.6);font-family:"Nunito",sans-serif}
+      .home .btn span{font-weight:700;font-size:1.7rem}
+      .socials{position:relative;margin-top:9rem}
+      .socials .social-icons{list-style:none;display:flex;gap:8px}
+      .socials .social-icons li a{font-size:2rem;display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:100%;color:#00d9ff;background:#09011b}
+      .socials .social-icons .leetcode{background:#ffa116;color:#fff}
+      @media (max-width:450px){
+        .home .image img{width:80%;margin-left:0;margin-top:-6rem}
+        .home .content h1{font-size:3.5rem}
+        .home .content p{font-size:2rem}
+      }
+    </style>
+
+    <!-- Non-Blocking Full Stylesheet -->
+    <link rel="preload" href="./assets/css/style.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="./assets/css/style.min.css"></noscript>
+
+    <!-- Asynchronous FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" media="print" onload="this.media='all'" />
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    </noscript>
+
     <link id="favicon" rel="shortcut icon" href="./assets/images/favicon.svg" type="image/svg+xml">
     <title>Portfolio | Dinesh Kumar Yadav</title>
 </head>
@@ -272,13 +332,13 @@
 
 <a href="#home" aria-label="ScrollTop" class="fas fa-angle-up" id="scroll-top"></a>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.5/typed.min.js" integrity="sha512-1KbKusm/hAtkX5FScVR5G36wodIMnVd/aP04af06iyQTkD17szAMGNmxfNH+tEuFp3Og/P5G32L1qEC47CZbUQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="./assets/js/particles.min.js"></script>
-<script src="./assets/js/app.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js" integrity="sha512-SttpKhJqONuBVxbRcuH0wezjuX+BoFoli0yPsnrAADcHsQMW8rkR84ItFHGIkPvhnlRnE2FaifDOUw+EltbuHg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="https://unpkg.com/scrollreveal"></script>
-<script src="./assets/js/firebase-service.js"></script>
-<script src="./assets/js/script.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.5/typed.min.js" integrity="sha512-1KbKusm/hAtkX5FScVR5G36wodIMnVd/aP04af06iyQTkD17szAMGNmxfNH+tEuFp3Og/P5G32L1qEC47CZbUQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script defer src="./assets/js/particles.min.js"></script>
+<script defer src="./assets/js/app.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js" integrity="sha512-SttpKhJqONuBVxbRcuH0wezjuX+BoFoli0yPsnrAADcHsQMW8rkR84ItFHGIkPvhnlRnE2FaifDOUw+EltbuHg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script defer src="https://unpkg.com/scrollreveal"></script>
+<script defer src="./assets/js/firebase-service.js"></script>
+<script defer src="./assets/js/script.min.js"></script>
 </body>
 </html>

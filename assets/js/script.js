@@ -132,21 +132,30 @@ document.addEventListener('visibilitychange', function () {
     }
 });
 
-var typed = new Typed(".typing-text", {
-    strings: [
-        "Data Science 📊",
-        "Machine Learning 🤖",
-        "AI Engineering 💡",
-        "Deep Learning & Vision 🧠",
-        "Generative AI & RAG 🚀",
-        "Quantum Machine Learning ⚛️",
-        "FastAPI & REST APIs ⚙️"
-    ],
-    loop: true,
-    typeSpeed: 50,
-    backSpeed: 25,
-    backDelay: 500,
-});
+function initTyped() {
+    if (document.querySelector(".typing-text") && typeof Typed !== "undefined") {
+        new Typed(".typing-text", {
+            strings: [
+                "Data Science 📊",
+                "Machine Learning 🤖",
+                "AI Engineering 💡",
+                "Deep Learning & Vision 🧠",
+                "Generative AI & RAG 🚀",
+                "Quantum Machine Learning ⚛️",
+                "FastAPI & REST APIs ⚙️"
+            ],
+            loop: true,
+            typeSpeed: 50,
+            backSpeed: 25,
+            backDelay: 500,
+        });
+    }
+}
+if (document.readyState === 'loading') {
+    document.addEventListener("DOMContentLoaded", initTyped);
+} else {
+    initTyped();
+}
 
 function showSkills(skills) {
     let skillsContainer = document.getElementById("skillsContainer");
@@ -208,8 +217,9 @@ function showProjects(projects) {
     });
     projectsContainer.innerHTML = projectHTML;
 
-    if (window.VanillaTilt) {
-        VanillaTilt.init(document.querySelectorAll(".tilt"), { max: 15 });
+    const isTouchOrMobile = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || window.innerWidth < 768;
+    if (!isTouchOrMobile && window.VanillaTilt) {
+        VanillaTilt.init(document.querySelectorAll(".tilt"), { max: 12, speed: 400 });
     }
 }
 
