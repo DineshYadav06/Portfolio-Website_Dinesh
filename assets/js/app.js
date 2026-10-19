@@ -1,19 +1,21 @@
 /**
  * Optimized ParticlesJS configuration for Dinesh Kumar Yadav portfolio.
- * - Dynamic particle count: Desktop (40-50), Mobile (15-20)
+ * - Dynamic particle count: Desktop (40), Mobile (15)
+ * - Mobile CPU optimization: line_linked disabled on mobile to prevent sqrt calculations
+ * - Deferred initialization via requestIdleCallback to free main thread during initial load
  * - Accessibility: Disabled if prefers-reduced-motion is active
- * - Performance: Automatically paused when hero is off-screen or tab is hidden
+ * - Auto-pause on scroll and tab switch
  */
 (function () {
     const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (prefersReducedMotion) {
-        return;
-    }
+    if (prefersReducedMotion) return;
 
-    const isMobile = window.innerWidth < 768;
-    const particleCount = isMobile ? 18 : 45;
+    function initParticles() {
+        if (typeof particlesJS === 'undefined') return;
 
-    if (typeof particlesJS !== 'undefined') {
+        const isMobile = window.innerWidth < 768;
+        const particleCount = isMobile ? 15 : 40;
+
         particlesJS('particles-js', {
             "particles": {
                 "number": {
@@ -27,36 +29,26 @@
                     "value": "#000000"
                 },
                 "shape": {
-                    "type": "circle",
-                    "stroke": {
-                        "width": 0,
-                        "color": "#000000"
-                    }
+                    "type": "circle"
                 },
                 "opacity": {
-                    "value": 0.35,
-                    "random": false,
-                    "anim": {
-                        "enable": false
-                    }
+                    "value": 0.3,
+                    "random": false
                 },
                 "size": {
-                    "value": 4,
-                    "random": true,
-                    "anim": {
-                        "enable": false
-                    }
+                    "value": 3.5,
+                    "random": true
                 },
                 "line_linked": {
-                    "enable": true,
-                    "distance": 140,
+                    "enable": !isMobile,
+                    "distance": 130,
                     "color": "#000000",
-                    "opacity": 0.25,
+                    "opacity": 0.2,
                     "width": 1
                 },
                 "move": {
                     "enable": true,
-                    "speed": 3,
+                    "speed": 2.5,
                     "direction": "none",
                     "random": false,
                     "straight": false,
@@ -78,7 +70,7 @@
                 },
                 "modes": {
                     "repulse": {
-                        "distance": 80,
+                        "distance": 70,
                         "duration": 0.4
                     }
                 }
@@ -86,7 +78,6 @@
             "retina_detect": false
         });
 
-        // Pause animation when tab is inactive or hero is off-screen
         let heroInView = true;
 
         function updateParticleState() {
@@ -114,5 +105,11 @@
             }, { threshold: 0.05 });
             heroObserver.observe(heroEl);
         }
+    }
+
+    if ('requestIdleCallback' in window) {
+        requestIdleCallback(initParticles, { timeout: 1200 });
+    } else {
+        setTimeout(initParticles, 600);
     }
 })();

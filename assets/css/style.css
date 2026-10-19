@@ -6,6 +6,8 @@
   text-decoration: none;
   outline: none;
   border: none;
+}
+a, button, .btn, input, textarea {
   transition: all 0.2s linear;
 }
 html {

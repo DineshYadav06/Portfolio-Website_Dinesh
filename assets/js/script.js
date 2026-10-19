@@ -273,36 +273,28 @@ async function bootHome() {
 
 bootHome();
 
-if (window.VanillaTilt) {
-    VanillaTilt.init(document.querySelectorAll(".tilt"), { max: 15 });
+function initScrollReveal() {
+    if (typeof ScrollReveal === 'undefined') return;
+    const srtop = ScrollReveal({
+        origin: 'top',
+        distance: '60px',
+        duration: 800,
+        reset: false
+    });
+
+    srtop.reveal('.about .content', { delay: 150 });
+    srtop.reveal('.skills .container', { delay: 200 });
+    srtop.reveal('.education .box', { interval: 150 });
+    srtop.reveal('.work .box', { interval: 150 });
+    srtop.reveal('.experience .timeline', { delay: 200 });
+    srtop.reveal('.contact .container', { delay: 200 });
 }
 
-const srtop = ScrollReveal({
-    origin: 'top',
-    distance: '80px',
-    duration: 1000,
-    reset: true
-});
-
-srtop.reveal('.home .content h3', { delay: 200 });
-srtop.reveal('.home .content p', { delay: 200 });
-srtop.reveal('.home .content .btn', { delay: 200 });
-srtop.reveal('.home .image', { delay: 400 });
-srtop.reveal('.home .linkedin', { interval: 600 });
-srtop.reveal('.home .github', { interval: 800 });
-srtop.reveal('.about .content h3', { delay: 200 });
-srtop.reveal('.about .content .tag', { delay: 200 });
-srtop.reveal('.about .content p', { delay: 200 });
-srtop.reveal('.about .content .box-container', { delay: 200 });
-srtop.reveal('.about .content .resumebtn', { delay: 200 });
-srtop.reveal('.skills .container', { interval: 200 });
-srtop.reveal('.skills .container .bar', { delay: 400 });
-srtop.reveal('.education .box', { interval: 200 });
-srtop.reveal('.work .box', { interval: 200 });
-srtop.reveal('.experience .timeline', { delay: 400 });
-srtop.reveal('.experience .timeline .container', { interval: 400 });
-srtop.reveal('.contact .container', { delay: 400 });
-srtop.reveal('.contact .container .form-group', { delay: 400 });
+if ('requestIdleCallback' in window) {
+    requestIdleCallback(initScrollReveal, { timeout: 1500 });
+} else {
+    setTimeout(initScrollReveal, 500);
+}
 
 function animateCounters() {
     const statsSection = document.getElementById("stats");
