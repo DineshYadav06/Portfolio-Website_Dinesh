@@ -152,6 +152,10 @@
         <img draggable="false" src="https://cdn.dribbble.com/users/160117/screenshots/3197970/main.gif" alt="Contact illustration">
       </div>
     <form id="contact-form">
+      <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
+      <input type="hidden" name="subject" value="New Contact Message from Portfolio — Dinesh Kumar Yadav">
+      <input type="hidden" name="from_name" value="Portfolio Contact Form">
+      <input type="checkbox" name="botcheck" style="display:none;" tabindex="-1" autocomplete="off">
       <div class="form-group">
         <div class="field">
           <input type="text" name="name" placeholder="Name" required>
@@ -174,6 +178,7 @@
         <button type="submit">
           Submit <i class="fa fa-paper-plane"></i></button>
       </div>
+      <div id="form-status" style="margin-top:1.2rem;font-size:1.4rem;display:none;padding:1rem 1.4rem;border-radius:0.5rem;text-align:center;line-height:1.5;"></div>
     </form>
   </div>
   </div>

@@ -41,26 +41,84 @@ $(document).ready(function () {
     $("#contact-form").submit(async function (event) {
         event.preventDefault();
         const form = document.getElementById("contact-form");
-        const payload = {
-            name: form.name.value.trim(),
-            email: form.email.value.trim(),
-            phone: form.phone.value.trim(),
-            message: form.message.value.trim()
-        };
-        try {
-            await window.PortfolioAPI.sendContact(payload);
-            form.reset();
-            alert("Message saved. I will get back to you soon.");
-        } catch (error) {
-            if (error && error.message === "NOT_CONFIGURED") {
-                window.location.href = "mailto:dineshkumaryadav12651@outlook.com?subject=" +
-                    encodeURIComponent("Portfolio contact from " + payload.name) +
-                    "&body=" + encodeURIComponent(payload.message + "\n\n" + payload.email + "\n" + payload.phone);
-                return;
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const statusDiv = document.getElementById("form-status");
+
+        const name = form.name.value.trim();
+        const email = form.email.value.trim();
+        const phone = form.phone ? form.phone.value.trim() : "";
+        const message = form.message.value.trim();
+        const botcheck = form.botcheck ? form.botcheck.checked : false;
+
+        // Anti-spam honeypot
+        if (botcheck) return;
+
+        if (!name || !email || !message) {
+            if (statusDiv) {
+                statusDiv.style.display = "block";
+                statusDiv.style.background = "#fee2e2";
+                statusDiv.style.color = "#991b1b";
+                statusDiv.textContent = "Please fill in all required fields (Name, Email, Message).";
             }
-            console.error(error);
-            alert("Could not send via Firebase. Opening email instead.");
-            window.location.href = "mailto:dineshkumaryadav12651@outlook.com";
+            return;
+        }
+
+        // Disable button & indicate loading state
+        submitBtn.disabled = true;
+        const originalBtnHTML = submitBtn.innerHTML;
+        submitBtn.innerHTML = 'Sending... <i class="fas fa-spinner fa-spin"></i>';
+
+        const accessKey = form.access_key ? form.access_key.value : "";
+
+        // If Web3Forms key is still default placeholder, fallback gracefully to mailto
+        if (!accessKey || accessKey === "YOUR_WEB3FORMS_ACCESS_KEY") {
+            if (statusDiv) {
+                statusDiv.style.display = "block";
+                statusDiv.style.background = "#fef3c7";
+                statusDiv.style.color = "#92400e";
+                statusDiv.innerHTML = "Opening your email app... (Add your free key from <a href='https://web3forms.com' target='_blank' style='text-decoration:underline;'>web3forms.com</a> to enable direct background sending).";
+            }
+            setTimeout(() => {
+                window.location.href = `mailto:dineshkumaryadav12651@outlook.com?subject=${encodeURIComponent("Portfolio contact from " + name)}&body=${encodeURIComponent(message + "\n\nFrom: " + name + "\nEmail: " + email + (phone ? "\nPhone: " + phone : ""))}`;
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalBtnHTML;
+            }, 600);
+            return;
+        }
+
+        try {
+            const formData = new FormData(form);
+            const response = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                body: formData
+            });
+            const data = await response.json();
+
+            if (data.success) {
+                form.reset();
+                if (statusDiv) {
+                    statusDiv.style.display = "block";
+                    statusDiv.style.background = "#dcfce7";
+                    statusDiv.style.color = "#166534";
+                    statusDiv.textContent = "Thank you! Your message has been sent successfully. I will get back to you soon.";
+                }
+            } else {
+                throw new Error(data.message || "Failed to send message");
+            }
+        } catch (error) {
+            console.error("Web3Forms error:", error);
+            if (statusDiv) {
+                statusDiv.style.display = "block";
+                statusDiv.style.background = "#fee2e2";
+                statusDiv.style.color = "#991b1b";
+                statusDiv.textContent = "Could not send directly. Opening your email app instead...";
+            }
+            setTimeout(() => {
+                window.location.href = `mailto:dineshkumaryadav12651@outlook.com?subject=${encodeURIComponent("Portfolio contact from " + name)}&body=${encodeURIComponent(message + "\n\nFrom: " + name + "\nEmail: " + email + (phone ? "\nPhone: " + phone : ""))}`;
+            }, 700);
+        } finally {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalBtnHTML;
         }
     });
 });
