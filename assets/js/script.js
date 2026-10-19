@@ -278,3 +278,55 @@ srtop.reveal('.experience .timeline', { delay: 400 });
 srtop.reveal('.experience .timeline .container', { interval: 400 });
 srtop.reveal('.contact .container', { delay: 400 });
 srtop.reveal('.contact .container .form-group', { delay: 400 });
+
+function animateCounters() {
+    const statsSection = document.getElementById("stats");
+    if (!statsSection) return;
+
+    let animated = false;
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !animated) {
+                animated = true;
+                document.querySelectorAll(".stat-num").forEach(counter => {
+                    const target = +counter.getAttribute("data-target");
+                    let current = 0;
+                    const stepTime = Math.max(20, Math.floor(1200 / target));
+                    const timer = setInterval(() => {
+                        current += 1;
+                        counter.textContent = current;
+                        if (current >= target) {
+                            counter.textContent = target;
+                            clearInterval(timer);
+                        }
+                    }, stepTime);
+                });
+
+                document.querySelectorAll(".stat-num-float").forEach(counter => {
+                    const target = parseFloat(counter.getAttribute("data-target"));
+                    const steps = 30;
+                    const increment = target / steps;
+                    let current = 0.0;
+                    let count = 0;
+                    const timer = setInterval(() => {
+                        count++;
+                        current += increment;
+                        counter.textContent = current.toFixed(1);
+                        if (count >= steps) {
+                            counter.textContent = target.toFixed(1);
+                            clearInterval(timer);
+                        }
+                    }, 1200 / steps);
+                });
+            }
+        });
+    }, { threshold: 0.2 });
+
+    observer.observe(statsSection);
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener("DOMContentLoaded", animateCounters);
+} else {
+    animateCounters();
+}
