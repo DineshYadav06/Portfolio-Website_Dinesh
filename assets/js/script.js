@@ -190,7 +190,7 @@ function showProjects(projects) {
             : '';
         projectHTML += `
         <div class="box tilt">
-      <img draggable="false" src="${base}assets/images/projects/${project.image}.webp" onerror="this.onerror=null;this.src='${base}assets/images/projects/${project.image}.svg';" alt="${project.name}" loading="lazy" width="400" height="250" />
+      <img draggable="false" src="${base}assets/images/projects/${project.image}.webp" onerror="this.onerror=null;this.src='${base}assets/images/projects/${project.image}.svg';" alt="${project.name}" loading="lazy" decoding="async" width="400" height="250" />
       <div class="content">
         <div class="tag">
         <h3>${project.name}${badge}</h3>

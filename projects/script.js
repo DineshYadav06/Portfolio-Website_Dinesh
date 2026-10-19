@@ -44,7 +44,7 @@ function showProjects(projects) {
         projectsHTML += `
         <div class="grid-item ${project.category}">
         <div class="box tilt" style="width: 380px; margin: 1rem">
-      <img draggable="false" src="${base}assets/images/projects/${project.image}.webp" onerror="this.onerror=null;this.src='${base}assets/images/projects/${project.image}.svg';" alt="${project.name}" loading="lazy" width="380" height="240" />
+      <img draggable="false" src="${base}assets/images/projects/${project.image}.webp" onerror="this.onerror=null;this.src='${base}assets/images/projects/${project.image}.svg';" alt="${project.name}" loading="lazy" decoding="async" width="380" height="240" />
       <div class="content">
         <div class="tag">
         <h3>${project.name}${badge}</h3>
