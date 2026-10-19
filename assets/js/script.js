@@ -5,28 +5,42 @@ $(document).ready(function () {
         $('.navbar').toggleClass('nav-toggle');
     });
 
-    $(window).on('scroll load', function () {
+    let isScrolling = false;
+    function handleScrollUpdate() {
         $('#menu').removeClass('fa-times');
         $('.navbar').removeClass('nav-toggle');
 
-        if (window.scrollY > 60) {
-            document.querySelector('#scroll-top').classList.add('active');
-        } else {
-            document.querySelector('#scroll-top').classList.remove('active');
+        const scrollY = window.scrollY || window.pageYOffset;
+        const scrollTopBtn = document.querySelector('#scroll-top');
+        if (scrollTopBtn) {
+            if (scrollY > 60) {
+                scrollTopBtn.classList.add('active');
+            } else {
+                scrollTopBtn.classList.remove('active');
+            }
         }
 
-        $('section').each(function () {
-            let height = $(this).height();
-            let offset = $(this).offset().top - 200;
-            let top = $(window).scrollTop();
-            let id = $(this).attr('id');
-
-            if (top > offset && top < offset + height) {
+        const sections = document.querySelectorAll('section');
+        const scrollPos = scrollY + 200;
+        sections.forEach(sec => {
+            const top = sec.offsetTop;
+            const height = sec.offsetHeight;
+            const id = sec.getAttribute('id');
+            if (scrollPos >= top && scrollPos < top + height) {
                 $('.navbar ul li a').removeClass('active');
                 $('.navbar').find(`[href="#${id}"]`).addClass('active');
             }
         });
-    });
+        isScrolling = false;
+    }
+
+    window.addEventListener('scroll', function () {
+        if (!isScrolling) {
+            isScrolling = true;
+            window.requestAnimationFrame(handleScrollUpdate);
+        }
+    }, { passive: true });
+    handleScrollUpdate();
 
     $('a[href^="#"]').on('click', function (e) {
         const href = $(this).attr('href');
@@ -160,12 +174,13 @@ if (document.readyState === 'loading') {
 function showSkills(skills) {
     let skillsContainer = document.getElementById("skillsContainer");
     if (!skillsContainer) return;
+    const base = (document.body && document.body.dataset.base) || "./";
     let skillHTML = "";
     skills.forEach(skill => {
         skillHTML += `
         <div class="bar">
               <div class="info">
-                <img src="${skill.icon}" alt="${skill.name}" />
+                <img src="${base}${skill.icon}" alt="${skill.name}" width="40" height="40" loading="lazy" decoding="async" />
                 <span>${skill.name}</span>
               </div>
             </div>`;
