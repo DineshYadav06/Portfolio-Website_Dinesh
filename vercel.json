@@ -1,4 +1,9 @@
 {
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "/projects", "destination": "/projects/index.html" },
+    { "source": "/experience", "destination": "/experience/index.html" }
+  ],
   "headers": [
     {
       "source": "/assets/(.*)",

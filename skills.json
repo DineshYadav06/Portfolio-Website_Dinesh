@@ -25,7 +25,7 @@
   },
   {
     "name": "Keras",
-    "icon": "assets/images/skills/keras.png"
+    "icon": "assets/images/skills/keras.svg"
   },
   {
     "name": "Scikit-learn",
@@ -45,11 +45,11 @@
   },
   {
     "name": "LangChain",
-    "icon": "assets/images/skills/langchain.png"
+    "icon": "assets/images/skills/langchain.svg"
   },
   {
     "name": "FastAPI",
-    "icon": "assets/images/skills/fastapi.png"
+    "icon": "assets/images/skills/fastapi.svg"
   },
   {
     "name": "Docker",
@@ -69,7 +69,7 @@
   },
   {
     "name": "Postman",
-    "icon": "assets/images/skills/postman.png"
+    "icon": "assets/images/skills/postman.svg"
   },
   {
     "name": "Next.js",
