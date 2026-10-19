@@ -8,7 +8,6 @@
   text-decoration: none;
   outline: none;
   border: none;
-  text-transform: capitalize;
   transition: all 0.2s linear;
 }
 html {
@@ -106,6 +105,12 @@ header .logo:hover {
 }
 .home .social-icons .kaggle {
   background: #20beff;
+}
+.home .social-icons .leetcode {
+  background: #ffa116;
+}
+.home .social-icons .leetcode:hover {
+  background: #d97706;
 }
 header .navbar ul {
   list-style: none;

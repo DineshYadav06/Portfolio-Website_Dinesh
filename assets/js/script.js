@@ -78,12 +78,11 @@ var typed = new Typed(".typing-text", {
     strings: [
         "Data Science 📊",
         "Machine Learning 🤖",
-        "Deep Learning 🧠",
-        "Web Development 🌐",
-        "FastAPI & Backend Dev ⚙️",
-        "Computer Vision 👁️",
+        "AI Engineering 💡",
+        "Deep Learning & Vision 🧠",
         "Generative AI & RAG 🚀",
-        "Data Analysis & EDA 📈"
+        "Quantum Machine Learning ⚛️",
+        "FastAPI & REST APIs ⚙️"
     ],
     loop: true,
     typeSpeed: 50,
@@ -115,24 +114,35 @@ function projectImage(project) {
 function showProjects(projects) {
     let projectsContainer = document.querySelector("#work .box-container");
     if (!projectsContainer) return;
+    const base = (document.body && document.body.dataset.base) || "./";
     let projectHTML = "";
     projects.slice(0, 10).forEach(project => {
         const isLive = project.links.view && !project.links.view.includes('github.com');
         const liveBadge = isLive
             ? `<span style="display:inline-block;background:linear-gradient(90deg,#ff4444,#ff6b35);color:#fff;font-size:0.65rem;font-weight:700;padding:2px 8px;border-radius:20px;letter-spacing:1px;vertical-align:middle;margin-left:6px;">🔴 LIVE</span>`
             : '';
+        const tagsHTML = Array.isArray(project.tags)
+            ? `<div class="project-tags" style="display:flex;flex-wrap:wrap;gap:5px;margin:8px 0;">${project.tags.map(t => `<span style="background:rgba(37,99,235,0.12);color:#2563eb;font-size:0.72rem;font-weight:600;padding:2px 8px;border-radius:4px;border:1px solid rgba(37,99,235,0.25);">${t}</span>`).join('')}</div>`
+            : '';
+        const viewBtn = project.links.view
+            ? `<a href="${project.links.view}" class="btn" target="_blank" rel="noopener"><i class="fas fa-eye"></i> ${isLive ? 'Visit Live' : 'View'}</a>`
+            : '';
+        const codeBtn = project.links.code
+            ? `<a href="${project.links.code}" class="btn" target="_blank" rel="noopener">Code <i class="fas fa-code"></i></a>`
+            : '';
         projectHTML += `
         <div class="box tilt">
-      <img draggable="false" src="${projectImage(project)}" alt="${project.name}" />
+      <img draggable="false" src="${base}assets/images/projects/${project.image}.webp" onerror="this.onerror=null;this.src='${base}assets/images/projects/${project.image}.svg';" alt="${project.name}" loading="lazy" width="400" height="250" />
       <div class="content">
         <div class="tag">
         <h3>${project.name}${liveBadge}</h3>
         </div>
         <div class="desc">
           <p>${project.desc}</p>
+          ${tagsHTML}
           <div class="btns">
-            <a href="${project.links.view}" class="btn" target="_blank" rel="noopener"><i class="fas fa-eye"></i> ${isLive ? 'Visit Live' : 'View'}</a>
-            <a href="${project.links.code}" class="btn" target="_blank" rel="noopener">Code <i class="fas fa-code"></i></a>
+            ${viewBtn}
+            ${codeBtn}
           </div>
         </div>
       </div>
