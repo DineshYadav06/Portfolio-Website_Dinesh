@@ -46,7 +46,7 @@
   {
     "name": "MCAET ExamHub — Online Exam Portal 🎓 LIVE",
     "desc": "Official Online Examination & Academic Evaluation Portal for MCAET — live and actively used by B.Tech, M.Tech, and Ph.D students for CBT exams. Features separate secure portals for Students, Professors, and Admins, automated scoring, and department integration.",
-    "image": "examhub",
+    "image": "mcaet-examhub",
     "category": "web",
     "tags": ["Next.js", "Tailwind CSS", "FastAPI", "Vercel"],
     "links": {
@@ -57,7 +57,7 @@
   {
     "name": "MCAET College Website — Official & Live 🌐",
     "desc": "Official website for Mahamaya College of Agricultural Engineering & Technology (ANDUAT). Built with Next.js, featuring 7 department portals, faculty directory, notice board, and integrated Google Gemini RAG AI Chatbot serving students 24/7.",
-    "image": "mcaetlms",
+    "image": "mcaet-website",
     "category": "web",
     "tags": ["Next.js", "Gemini API", "FastAPI", "Full Stack"],
     "links": {
