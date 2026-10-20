@@ -150,13 +150,13 @@ function initTyped() {
     if (document.querySelector(".typing-text") && typeof Typed !== "undefined") {
         new Typed(".typing-text", {
             strings: [
-                "Data Science 📊",
-                "Machine Learning 🤖",
-                "AI Engineering 💡",
-                "Deep Learning & Vision 🧠",
-                "Generative AI & RAG 🚀",
-                "Quantum Machine Learning ⚛️",
-                "FastAPI & REST APIs ⚙️"
+                "Data Scientist \u{1F4CA}",
+                "Backend Developer \u{1F4BB}",
+                "Deep Learning & Vision \u{1F9E0}",
+                "Machine Learning \u{1F916}",
+                "Generative AI & RAG \u{1F680}",
+                "FastAPI & REST APIs \u26A1",
+                "AI Engineering \u{1F4A1}"
             ],
             loop: true,
             typeSpeed: 50,
