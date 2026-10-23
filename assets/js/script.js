@@ -1,5 +1,11 @@
 $(document).ready(function () {
 
+    // Close mobile drawer on navigation link click
+    $('.navbar ul li a').on('click', function () {
+        $('#menu').removeClass('fa-times');
+        $('.navbar').removeClass('nav-toggle');
+    });
+
     $('#menu').click(function () {
         $(this).toggleClass('fa-times');
         $('.navbar').toggleClass('nav-toggle');
