@@ -339,15 +339,18 @@ header .navbar ul li a:hover{
   position: fixed;
   top: -140%;
   right: 2rem;
-  padding: 1rem 1.5rem;
+  padding: 1rem 1.4rem;
   font-size: 2rem;
   background: #ffae00;
   color: rgb(13, 0, 44);
-  border-radius: 5rem;
-  transition: 1s linear;
+  border-radius: 50%;
+  transition: 0.5s ease;
   z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }
 #scroll-top.active{
-  top: calc(100% - 12rem);
+  top: auto;
+  bottom: 8.8rem;
+  right: 2rem;
 }
 /* scroll top ends */
