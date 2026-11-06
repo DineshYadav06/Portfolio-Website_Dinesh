@@ -407,6 +407,97 @@
 }
 
 /* --------------------------------------------------------------------------
+   In-Chat Contact Form
+   -------------------------------------------------------------------------- */
+.cb-contact-card {
+  margin-top: 1rem;
+  background: rgba(11, 17, 32, 0.75);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  border-radius: var(--cb-radius-md);
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.cb-contact-card h5 {
+  margin: 0;
+  font-size: 1.35rem;
+  color: #38bdf8;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.cb-contact-input {
+  width: 100%;
+  padding: 0.85rem 1.2rem;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--cb-radius-sm);
+  color: #f8fafc;
+  font-size: 1.25rem;
+  font-family: var(--cb-font);
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.cb-contact-input:focus {
+  border-color: #38bdf8;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.2);
+}
+
+.cb-contact-textarea {
+  min-height: 6.5rem;
+  resize: vertical;
+}
+
+.cb-contact-btn {
+  background: linear-gradient(135deg, #2506ad 0%, #06b6d4 100%);
+  color: #fff;
+  border: none;
+  padding: 0.85rem 1.4rem;
+  border-radius: var(--cb-radius-sm);
+  font-size: 1.3rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  transition: all 0.2s ease;
+  font-family: var(--cb-font);
+}
+
+.cb-contact-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(6, 182, 212, 0.4);
+}
+
+.cb-contact-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.cb-contact-success {
+  background: rgba(16, 185, 129, 0.15);
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  color: #34d399;
+  padding: 1.1rem 1.3rem;
+  border-radius: var(--cb-radius-sm);
+  font-size: 1.3rem;
+  line-height: 1.5;
+  animation: cb-fade-slide 0.3s ease;
+}
+
+.cb-contact-success strong {
+  color: #fff;
+}
+
+/* --------------------------------------------------------------------------
    Quick Question Chips
    -------------------------------------------------------------------------- */
 .cb-chips-wrapper {

@@ -10,7 +10,7 @@
   // Knowledge Base & Predefined Responses
   // ---------------------------------------------------------------------------
   // Dynamic base path for root vs sub-pages (/projects/ or /experience/)
-  const isSubPage = window.location.pathname.includes('/projects/') || window.location.pathname.includes('/experience/');
+  const isSubPage = window.location.pathname.includes('/projects') || window.location.pathname.includes('/experience');
   const BASE_PREFIX = isSubPage ? '../' : './';
 
   const DINESH_INFO = {
@@ -43,7 +43,7 @@
   const INTENTS = [
     {
       id: "skills",
-      keywords: ["skill", "skills", "tech", "technology", "stack", "language", "python", "fastapi", "tools", "framework", "kya aata hai"],
+      keywords: ["skill", "skills", "tech", "technology", "technologies", "stack", "language", "languages", "python", "fastapi", "tools", "framework", "frameworks", "kya aata hai", "ai", "machine learning", "ml", "deep learning", "dl", "nlp", "computer vision", "cv", "pytorch", "tensorflow", "coding", "expertise"],
       reply: `
         <p>Here is a breakdown of <strong>Dinesh's Core Technical Stack</strong>:</p>
         <ul>
@@ -59,7 +59,7 @@
     },
     {
       id: "research",
-      keywords: ["research", "internship", "intern", "siu", "symbiosis", "quantum", "medical", "segmentation", "meibomian"],
+      keywords: ["research", "internship", "internships", "intern", "siu", "symbiosis", "quantum", "qml", "medical", "segmentation", "meibomian", "gland", "paper", "experience"],
       reply: `
         <p>Dinesh completed <strong>two high-impact research internships</strong> at <strong>Symbiosis International University (SIU)</strong>:</p>
         <ul>
@@ -72,13 +72,13 @@
     },
     {
       id: "projects",
-      keywords: ["project", "projects", "work", "portfolio", "built", "mcaet", "app", "website", "chatbot", "emotion"],
+      keywords: ["project", "projects", "work", "portfolio", "built", "mcaet", "app", "website", "chatbot", "chatboat", "chat bot", "emotion", "cattle", "exam", "portal", "farmrenthub", "bhoomidrishti", "kaam", "live projects"],
       reply: `
         <p>Dinesh has engineered several live production & AI systems:</p>
         <ul>
           <li><strong>MCAET College Info Assistant:</strong> RAG-based AI chatbot indexing college syllabi, exam schedules, and admissions queries.</li>
-          <li><strong>MCAET College Website:</strong> Official production website (<a href="https://mcaet.vercel.app/" target="_blank" class="cb-link-btn" style="padding:0.2rem 0.6rem;font-size:1.15rem;">Visit Site</a>).</li>
-          <li><strong>MCAET Online Exam Portal:</strong> Active examination platform (<a href="https://mcaetexamportal.vercel.app/" target="_blank" class="cb-link-btn" style="padding:0.2rem 0.6rem;font-size:1.15rem;">Visit Portal</a>).</li>
+          <li><strong>MCAET College Website:</strong> Official production website (<a href="https://mcaet.vercel.app/" target="_blank" rel="noopener" class="cb-link-btn" style="padding:0.2rem 0.6rem;font-size:1.15rem;">Visit Site</a>).</li>
+          <li><strong>MCAET Online Exam Portal:</strong> Active examination platform (<a href="https://mcaetexamportal.vercel.app/" target="_blank" rel="noopener" class="cb-link-btn" style="padding:0.2rem 0.6rem;font-size:1.15rem;">Visit Portal</a>).</li>
           <li><strong>Facial Emotion Recognition:</strong> Real-time deep learning computer vision system achieving <strong>89% accuracy</strong>.</li>
           <li><strong>Cattle Breed Classifier:</strong> Deep learning model for livestock recognition.</li>
           <li><strong>FarmRentHub / BhoomiDrishti:</strong> AgriTech equipment rental & crop advisory platform with FastAPI & Next.js.</li>
@@ -89,7 +89,7 @@
     },
     {
       id: "resume",
-      keywords: ["resume", "cv", "biodata", "download", "pdf", "resume link"],
+      keywords: ["resume", "cv", "biodata", "download", "pdf", "resume link", "curriculum vitae", "profile pdf"],
       reply: `
         <p>You can directly view and download Dinesh's latest <strong>Data Science & AI Engineer Resume</strong> below:</p>
         <p style="margin:0.8rem 0;">
@@ -106,7 +106,7 @@
     },
     {
       id: "sih",
-      keywords: ["sih", "hackathon", "smart india", "lead", "leadership", "team lead", "competition"],
+      keywords: ["sih", "hackathon", "smart india", "lead", "leadership", "team lead", "competition", "hackathons"],
       reply: `
         <p>🏆 <strong>Smart India Hackathon (SIH) Leadership:</strong></p>
         <p>Dinesh was selected <strong>twice as SIH Team Lead</strong> at the institute level (<strong>SIH 2025 & SIH 2026</strong>).</p>
@@ -120,7 +120,7 @@
     },
     {
       id: "backend",
-      keywords: ["backend", "fastapi", "api", "rest", "database", "postgres", "docker", "server", "architecture"],
+      keywords: ["backend", "fastapi", "api", "apis", "rest", "restful", "database", "databases", "postgres", "postgresql", "docker", "server", "architecture", "sql", "mongodb"],
       reply: `
         <p>⚡ <strong>Backend Development Expertise:</strong></p>
         <ul>
@@ -135,7 +135,7 @@
     },
     {
       id: "education",
-      keywords: ["education", "college", "degree", "btech", "b.tech", "cgpa", "university", "school", "anduat", "ayodhya"],
+      keywords: ["education", "college", "degree", "btech", "b.tech", "cgpa", "university", "school", "anduat", "ayodhya", "padhai", "qualification", "marks", "grade", "study", "studies"],
       reply: `
         <p>🎓 <strong>Educational Background:</strong></p>
         <ul>
@@ -150,7 +150,7 @@
     },
     {
       id: "contact",
-      keywords: ["contact", "hire", "email", "phone", "whatsapp", "call", "reach", "message", "freelance", "job", "interview", "connect"],
+      keywords: ["contact", "hire", "email", "phone", "whatsapp", "call", "reach", "message", "freelance", "job", "interview", "connect", "number", "sampark", "baat", "mobile", "linkedin", "github"],
       reply: `
         <p>📬 <strong>Get in Touch with Dinesh:</strong></p>
         <ul>
@@ -158,17 +158,27 @@
           <li><strong>Phone:</strong> <a href="tel:${DINESH_INFO.phone}" style="color:#38bdf8;">${DINESH_INFO.phone}</a></li>
           <li><strong>Location:</strong> Varanasi, Uttar Pradesh, India</li>
         </ul>
-        <p style="margin-top:0.8rem;">
+        <p style="margin-top:0.6rem;">
           <a href="${DINESH_INFO.linkedin}" target="_blank" rel="noopener" class="cb-link-btn"><i class="fab fa-linkedin"></i> LinkedIn</a>
           <a href="${DINESH_INFO.github}" target="_blank" rel="noopener" class="cb-link-btn"><i class="fab fa-github"></i> GitHub</a>
+          <a href="https://wa.me/919555240369" target="_blank" rel="noopener" class="cb-link-btn" style="color:#22c55e;border-color:rgba(34,197,94,0.4);"><i class="fab fa-whatsapp"></i> WhatsApp</a>
         </p>
-        <p style="margin-top:0.6rem;">He is actively open for <strong>AI/ML Engineering roles, Data Science internships, and Backend development</strong>.</p>
+        <div class="cb-contact-card">
+          <h5><i class="fas fa-envelope-open-text"></i> Leave a Direct Message</h5>
+          <input type="text" class="cb-contact-input cb-form-name" placeholder="Your Name" required>
+          <input type="text" class="cb-contact-input cb-form-email" placeholder="Your Email or Phone" required>
+          <textarea class="cb-contact-input cb-contact-textarea cb-form-msg" placeholder="How can Dinesh help you?" required></textarea>
+          <button type="button" class="cb-contact-btn cb-form-submit">
+            <i class="fas fa-paper-plane"></i> Send Direct Message
+          </button>
+          <div class="cb-form-feedback" style="display:none;"></div>
+        </div>
       `,
       chips: ["resume", "projects", "skills"]
     },
     {
       id: "about_me",
-      keywords: ["who", "who is", "dinesh", "about", "bio", "intro", "introduction", "tell me about", "kon ho"],
+      keywords: ["who", "who is", "dinesh", "about", "bio", "intro", "introduction", "tell me about", "kon ho", "kaun ho", "profile", "kiske bare me", "summary"],
       reply: `
         <p>👋 <strong>Dinesh Kumar Yadav</strong> is a dedicated <strong>Data Scientist and Backend Developer</strong> focused on <em>Machine Learning, Deep Learning, and Generative AI</em>.</p>
         <ul>
@@ -182,7 +192,7 @@
     },
     {
       id: "greetings",
-      keywords: ["hi", "hello", "hey", "namaste", "hola", "greetings", "good morning", "good evening", "kaise ho"],
+      keywords: ["hi", "hello", "hey", "namaste", "hola", "greetings", "good morning", "good evening", "good afternoon", "kaise ho", "kya haal", "bhai", "sup", "yo", "start"],
       reply: `
         <p>👋 Hello there! Welcome to Dinesh's Portfolio!</p>
         <p>I am Dinesh's interactive <strong>AI Assistant</strong>. I can answer any questions regarding his <strong>Data Science background</strong>, <strong>Backend projects</strong>, <strong>SIU research</strong>, or provide his <strong>Resume</strong>.</p>
@@ -191,8 +201,24 @@
       chips: ["skills", "projects", "research", "resume"]
     },
     {
+      id: "help",
+      keywords: ["help", "kya kar sakte ho", "options", "menu", "features", "commands", "what can you do"],
+      reply: `
+        <p>🤖 Here is everything I can assist you with:</p>
+        <ul>
+          <li><strong>💼 Skills:</strong> Technical stack, languages & frameworks</li>
+          <li><strong>🔬 Research:</strong> Symbiosis (SIU) internships in Quantum ML & Medical CV</li>
+          <li><strong>🚀 Projects:</strong> MCAET live portals, RAG AI, Deep Learning</li>
+          <li><strong>📄 Resume:</strong> Instant view or download of latest CV</li>
+          <li><strong>📬 Contact:</strong> Direct email, phone, and social handles</li>
+        </ul>
+        <p>Choose any topic below to jump straight in:</p>
+      `,
+      chips: ["skills", "projects", "research", "resume", "contact"]
+    },
+    {
       id: "thanks",
-      keywords: ["thank", "thanks", "dhanyawad", "shukriya", "great", "awesome", "good", "nice", "cool"],
+      keywords: ["thank", "thanks", "dhanyawad", "shukriya", "great", "awesome", "good", "nice", "cool", "thank you", "helpful", "badhiya"],
       reply: `
         <p>You're very welcome! 😊 Glad I could help.</p>
         <p>If you'd like to collaborate or chat with Dinesh directly, you can drop him an email or download his resume anytime.</p>
@@ -276,7 +302,7 @@
             <span class="cb-status-dot"></span>
           </div>
           <div class="cb-header-info">
-            <h4>Dinesh AI <i class="fas fa-sparkles cb-sparkle"></i></h4>
+            <h4>Dinesh AI <i class="fas fa-magic cb-sparkle"></i></h4>
             <p>Data Science & Backend Assistant</p>
           </div>
         </div>
@@ -377,16 +403,7 @@
     // Clear chat
     clearBtn.addEventListener("click", () => {
       messagesEl.innerHTML = "";
-      // Mobile Virtual Keyboard Handling
-    if (window.visualViewport) {
-      window.visualViewport.addEventListener('resize', () => {
-        if (window.innerWidth <= 600 && isChatOpen) {
-          chatWindow.style.height = `${window.visualViewport.height}px`;
-          scrollToBottom();
-        }
-      });
-    }
-    renderWelcomeMessage();
+      renderWelcomeMessage();
     });
 
     // Form submit
@@ -396,6 +413,64 @@
       if (!text) return;
       inputEl.value = "";
       handleUserMessage(text);
+    });
+
+    // Delegated click listener for in-chat contact form
+    messagesEl.addEventListener("click", (e) => {
+      const submitBtn = e.target.closest(".cb-form-submit");
+      if (!submitBtn) return;
+      const card = submitBtn.closest(".cb-contact-card");
+      if (!card) return;
+
+      const nameInput = card.querySelector(".cb-form-name");
+      const emailInput = card.querySelector(".cb-form-email");
+      const msgInput = card.querySelector(".cb-form-msg");
+      const feedback = card.querySelector(".cb-form-feedback");
+
+      const name = nameInput ? nameInput.value.trim() : "";
+      const email = emailInput ? emailInput.value.trim() : "";
+      const msg = msgInput ? msgInput.value.trim() : "";
+
+      if (!name || !email || !msg) {
+        if (!name && nameInput) nameInput.style.borderColor = "#ef4444";
+        if (!email && emailInput) emailInput.style.borderColor = "#ef4444";
+        if (!msg && msgInput) msgInput.style.borderColor = "#ef4444";
+        feedback.style.display = "block";
+        feedback.className = "cb-contact-success";
+        feedback.style.background = "rgba(239, 68, 68, 0.15)";
+        feedback.style.borderColor = "rgba(239, 68, 68, 0.4)";
+        feedback.style.color = "#f87171";
+        feedback.innerHTML = "<i class='fas fa-exclamation-circle'></i> Please enter your Name, Email/Phone, and Message.";
+        return;
+      }
+
+      if (nameInput) nameInput.style.borderColor = "";
+      if (emailInput) emailInput.style.borderColor = "";
+      if (msgInput) msgInput.style.borderColor = "";
+
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = `<i class="fas fa-spinner fa-spin"></i> Sending message...`;
+
+      setTimeout(() => {
+        try {
+          const leads = JSON.parse(localStorage.getItem("portfolio_leads") || "[]");
+          leads.push({ name, email, msg, date: new Date().toISOString() });
+          localStorage.setItem("portfolio_leads", JSON.stringify(leads));
+        } catch (err) {}
+
+        const cleanName = name.replace(/[&<>"']/g, "");
+        const cleanEmail = email.replace(/[&<>"']/g, "");
+
+        card.innerHTML = `
+          <div class="cb-contact-success">
+            <i class="fas fa-check-circle" style="font-size:1.6rem;color:#10b981;"></i>
+            <p style="margin:0.5rem 0 0.3rem;"><strong>Message Sent Successfully!</strong></p>
+            <p style="font-size:1.2rem;color:#cbd5e1;margin:0;">Thank you, <strong>${cleanName}</strong>! Dinesh has received your message and will get back to you at <strong>${cleanEmail}</strong> soon.</p>
+          </div>
+        `;
+        playChime("incoming");
+        scrollToBottom();
+      }, 700);
     });
 
     function scrollToBottom() {
